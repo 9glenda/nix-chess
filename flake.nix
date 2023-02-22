@@ -60,9 +60,10 @@ engine:                      # Engine settings.
   protocol: "uci"            # "uci", "xboard" or "homemade"
   ponder: true               # Think on opponent's time.
   polyglot:
-    enabled: false # Activate polyglot book.
+    enabled: true # Activate polyglot book.
     book:
-      #standard:              # List of book file paths for variant standard.
+      standard:              # List of book file paths for variant standard.
+        - engines/mechaniac-white.bin
 #     atomic:                # List of book file paths for variant atomic.
 #       - engines/atomicbook1.bin
 #       - engines/atomicbook2.bin
@@ -271,6 +272,7 @@ matchmaking:
             cp *.py $out/bin
             install -t $out/bin lichess-bot
             mkdir -p $out/engines
+            install ${self.packages.${system}.openingbook}/engines/*.bin $out/engines
             install ${pkgs.${system}.stockfish}/bin/stockfish $out/engines/stockfish
           '';
           propagatedBuildInputs = with pkgs.${system}; [
@@ -291,6 +293,15 @@ matchmaking:
             ]))
             #python3Minimal
           ];
+        };
+        openingbook = pkgs.${system}.stdenv.mkDerivation {
+          name = "openingbook";
+          src = ./.;
+          installPhase = ''
+            mkdir -p $out/bin
+            mkdir -p $out/engines
+            install *.bin $out/engines
+          '';
         };
       });
 
