@@ -69,7 +69,7 @@ engine:                      # Engine settings.
 #       - engines/atomicbook2.bin
 #     etc.
 #     Use the same pattern for 'giveaway' (antichess), 'crazyhouse', 'horde', 'kingofthehill', 'racingkings' and '3check' as well.
-    min_weight: 1            # Does not select moves with weight below min_weight (min 0, max: 65535).
+    min_weight: 0            # Does not select moves with weight below min_weight (min 0, max: 65535).
     selection: "weighted_random" # Move selection is one of "weighted_random", "uniform_random" or "best_move" (but not below the min_weight in the 2nd and 3rd case).
     max_depth: 20             # How many moves from the start to take from the book.
   draw_or_resign:
