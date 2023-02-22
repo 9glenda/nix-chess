@@ -63,7 +63,8 @@ engine:                      # Engine settings.
     enabled: true # Activate polyglot book.
     book:
       standard:              # List of book file paths for variant standard.
-        - ${self.packages.x86_64-linux.lichess-bot}/engines/nc3nc6.bin
+        - ${self.packages.x86_64-linux.lichess-bot}/engines/nc3.bin
+        - ${self.packages.x86_64-linux.lichess-bot}/engines/nc6.bin
 #     atomic:                # List of book file paths for variant atomic.
 #       - engines/atomicbook1.bin
 #       - engines/atomicbook2.bin
