@@ -30,13 +30,13 @@
               description = "Token for the bot";
             };
             skill = mkOption {
-              type = types.int;
-              default = 3;
+              type = types.str;
+              default = "3";
               description = "skill level of the bot 0-10";
             };
             games = mkOption {
-              type = types.int;
-              default = 3;
+              type = types.str;
+              default = "3";
               description = "number of games to play simultaneously";
             };
           };
