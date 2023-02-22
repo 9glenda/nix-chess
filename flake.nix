@@ -86,20 +86,20 @@ engine:                      # Engine settings.
     max_out_of_book_moves: 20 # Stop using online opening books after they don't have a move for 'max_out_of_book_moves' positions. Doesn't apply to the online endgame tablebases.
     max_retries: 2           # The maximum amount of retries when getting an online move.
     chessdb_book:
-      enabled: true
+      enabled: false
       min_time: 20
       move_quality: "good"   # One of "all", "good", "best".
       min_depth: 20          # Only for move_quality: "best".
       contribute: true
     lichess_cloud_analysis:
-      enabled: true
+      enabled: false
       min_time: 20
       move_quality: "good"   # One of "good", "best".
       max_score_difference: 50 # Only for move_quality: "good". The maximum score difference (in cp) between the best move and the other moves.
       min_depth: 20
       min_knodes: 0
     online_egtb:
-      enabled: true
+      enabled: false
       min_time: 20
       max_pieces: 7
       source: "lichess"      # One of "lichess", "chessdb".
