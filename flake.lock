@@ -1,0 +1,44 @@
+{
+  "nodes": {
+    "lichess-bot": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1669122646,
+        "narHash": "sha256-e7vdwrkaexyJV7CWYPb9aamJSH5WGX/u5iJw4/2+Wzc=",
+        "owner": "ShailChoksi",
+        "repo": "lichess-bot",
+        "rev": "9058e94acf8e62936b7a2655b006c778ef9c734c",
+        "type": "github"
+      },
+      "original": {
+        "owner": "ShailChoksi",
+        "repo": "lichess-bot",
+        "type": "github"
+      }
+    },
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1669261230,
+        "narHash": "sha256-AjddxRPd5y5jge77281P3O8+Cnafj842Xg59rwV4x+0=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "8e8b5f3b1e899bf5d250279578c0283705b8cdb4",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixpkgs-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "root": {
+      "inputs": {
+        "lichess-bot": "lichess-bot",
+        "nixpkgs": "nixpkgs"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}
