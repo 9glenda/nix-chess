@@ -29,6 +29,11 @@
               default = "@LICHESS_BOT_TOKEN@";
               description = "Token for the bot";
             };
+            skill = mkOption {
+              type = types.int;
+              default = 3;
+              description = "skill level of the bot 0-10";
+            };
           };
 
           config = mkIf cfg.enable {
@@ -115,7 +120,7 @@ engine:                      # Engine settings.
     Move Overhead: 100       # Increase if your bot flags games too often.
     Threads: 2               # Max CPU threads the engine can use.
     Hash: 256                # Max memory (in megabytes) the engine can allocate.
-    Skill Level: 3
+    Skill Level: ${cfg.skill}
   silence_stderr: false      # Some engines (yes you, Leela) are very noisy.
 
 abort_time: 20               # Time to abort a game in seconds when there is no activity.
