@@ -34,6 +34,11 @@
               default = 3;
               description = "skill level of the bot 0-10";
             };
+            games = mkOption {
+              type = types.int;
+              default = 3;
+              description = "number of games to play simultaneously";
+            };
           };
 
           config = mkIf cfg.enable {
@@ -135,7 +140,7 @@ correspondence:
   ponder: false            # Ponder in correspondence games the bot is connected to.
 
 challenge:                   # Incoming challenges.
-  concurrency: 5             # Number of games to play simultaneously.
+  concurrency: ${cfg.games}             # Number of games to play simultaneously.
   sort_by: "best"            # Possible values: "best" and "first".
   accept_bot: true           # Accepts challenges coming from other bots.
   only_bot: false            # Accept challenges by bots only.
